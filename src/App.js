@@ -1,20 +1,19 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import './index.css';
 import Feed from "./components/Feed"
 import Header from "./components/Header"
 import SearchResult from "./components/SearchResult"
 import VideoDetails from "./components/VideoDetails"
 
-import "./App.css"
-
 import { AppContext } from "./context/contextApi";
 function App() {
   return (
+    // <div className="text-9xl">test</div>
     <AppContext>
       <BrowserRouter>
+        <Header />
         <div className="flex flex-col h-full">
-          <Header />
           <Routes>
             <Route path="/" exact element={<Feed />} />
             <Route path="/searchResult/searchQuery" element={<SearchResult />} />
