@@ -9,7 +9,6 @@ import VideoDetails from "./components/VideoDetails"
 import { AppContext } from "./context/contextApi";
 function App() {
   return (
-    // <div className="text-9xl">test</div>
     <AppContext>
       <BrowserRouter>
         <Header />
