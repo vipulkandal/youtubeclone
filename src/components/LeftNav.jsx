@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-// // import LeftNavMenu from "./LeftNavMenuItem";
-import { categories } from "../utils/constant";
-import { Context } from "../context/contextApi";
 import LeftNavMenuItem from "./LeftNavMenuItem";
+import { categories } from "../utils/constants";
+import { Context } from "../context/contextApi";
 
 const LeftNav = () => {
-  const { selectCategories, setSelectCategories, mobileMenu } =
+  const { selectedCategory, setSelectCategories, mobileMenu } =
     useContext(Context);
 
   const navigate = useNavigate();
@@ -43,7 +42,7 @@ const LeftNav = () => {
                   navigate("/");
                 }}
                 className={`${
-                  selectCategories === item.name ? "bg-white/[0.15]" : ""
+                  selectedCategory === item.name ? "bg-white/[0.15]" : ""
                 }`}
               />
               {item.divider && <hr className="my-5 border-white/[0.2]" />}
